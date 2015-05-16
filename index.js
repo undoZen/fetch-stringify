@@ -38,7 +38,6 @@ global.fetch = (function (f) {
             }
         };
         var stringified = stringify(opts.body);
-        console.log(stringified);
         opts.body = stringified.body;
         opts.headers = opts.headers || {};
         opts.headers['content-type'] = stringified.type;

@@ -4,6 +4,7 @@
   "description": "auto stringify fetch body and set proper headers(content-type & content-length), supports json and urlencoded",
   "main": "index.js",
   "files": [
+    "dist/browser.js",
     "index.js"
   ],
   "scripts": {

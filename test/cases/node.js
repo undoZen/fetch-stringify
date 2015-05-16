@@ -51,6 +51,27 @@ tape('qs', function (test) {
         console.log(response.header);
         response.text().then(function (text) {
             test.equal(text, 'arr=1&arr=2&arr=3&arr=%E4%B8%AD%E6%96%87');
+        })
+    });
+});
+
+tape('qs global', function (test) {
+    test.plan(1);
+    fetch.stringify = function (body) {
+        return {
+            body: qs.stringify(body, {arrayFormat: 'repeat'}),
+            type: 'application/x-www-form-urlencoded;charset=UTF-8'
+        };
+    };
+    fetch('http://127.0.0.1:' + address.port, {
+        method: 'POST',
+        body: {
+            arr: [1,2,3,'中文']
+        }
+    }).then(function (response) {
+        console.log(response.header);
+        response.text().then(function (text) {
+            test.equal(text, 'arr=1&arr=2&arr=3&arr=%E4%B8%AD%E6%96%87');
             server.close();
         })
     });
