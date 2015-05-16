@@ -1,0 +1,39 @@
+{
+  "name": "fetch-stringify",
+  "version": "0.0.0",
+  "description": "auto stringify fetch body and set proper headers(content-type & content-length), supports json and urlencoded",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "prepublish": "npm test && npm run build",
+    "build": "rm -rf dist/ && mkdir dist && browserify index.js > dist/browser.js",
+    "test-server": "browserify test/cases/src.js > test/cases/browser.js && node test/server.js",
+    "test": "node test/cases/node.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/undoZen/fetch-stringify.git"
+  },
+  "keywords": [
+    "promise",
+    "fetch"
+  ],
+  "author": "undoZen <opensource@undozen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/undoZen/fetch-stringify/issues"
+  },
+  "homepage": "https://github.com/undoZen/fetch-stringify#readme",
+  "devDependencies": {
+    "bluebird": "^2.9.25",
+    "browserify": "^10.1.3",
+    "ecstatic": "^0.7.6",
+    "fetch-polyfill": "^0.8.1",
+    "node-fetch": "^1.2.1",
+    "qs": "^2.4.1",
+    "raw-body": "^1.3.4",
+    "tape": "^4.0.0"
+  }
+}
