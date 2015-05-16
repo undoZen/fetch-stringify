@@ -1,6 +1,6 @@
 {
   "name": "fetch-stringify",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "auto stringify fetch body and set proper headers(content-type & content-length), supports json and urlencoded",
   "main": "index.js",
   "files": [
