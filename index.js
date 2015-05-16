@@ -31,7 +31,7 @@ global.fetch = (function (f) {
         ) {
             return f.apply(this, arguments);
         }
-        var stringify = fetch.stringify || opts.stringify || function (body) {
+        var stringify = global.fetch.stringify || opts.stringify || function (body) {
             return {
                 body: JSON.stringify(body),
                 type: 'application/json;charset=UTF-8'
